@@ -55,6 +55,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/liste-revenu','App\HTTP\Controllers\RevenuController@index')->name('liste-revenu');
     Route::get('/ajouter-revenu','App\HTTP\Controllers\RevenuController@create')->name('ajoute-revenu');
     Route::post('/ajoute-revenu','App\HTTP\Controllers\RevenuController@store')->name('ajout-revenu');
+    Route::get('/extrait-revenu','App\HTTP\Controllers\RevenuController@chargeDroit')->name('extrait-revenu');
 
 });
 //les routes des utilisateurs

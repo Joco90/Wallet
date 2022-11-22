@@ -40,7 +40,12 @@
             @endforeach
           </tbody>
         </table>
+        <div class="ustify-content-center">
+            {!! $revenus->links() !!}
+        </div>
+
     </div>
+
 </div>
 
 @endsection

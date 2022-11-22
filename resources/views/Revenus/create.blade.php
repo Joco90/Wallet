@@ -37,7 +37,7 @@
                     <input type="text" class="form-control" name="libelle" id="description">
                 </div>
                 <div class="col-sm-4" id="blockmontant">
-                    <label for="montant" class="form-label">Montant du revenu</label>
+                    <label for="montant" class="form-label">Montant</label>
                     <input type="number" class="form-control" id="montant" name="montant">
                 </div>
                 <div class="col-sm-2">

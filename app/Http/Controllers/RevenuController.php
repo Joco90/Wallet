@@ -26,7 +26,7 @@ class RevenuController extends Controller
     // dd($maxDate);
         $title=str::upper('Mes entrées de');
 
-        $revenu=Revenu::where('etat',1)->where('user_id',$id)->get();
+        $revenu=Revenu::where('etat',1)->where('user_id',$id)->paginate(6);
         return view('Revenus.index',['titre'=>$title,'revenus'=>$revenu]);
 
     }
@@ -39,14 +39,13 @@ class RevenuController extends Controller
     public function create()
     {
         //
-        $revenu=Revenu::where('etat',1)->where('user_id',Auth::id())->orderBy('id','desc')->take(4)->get();
-        $id=Auth::id();
-        $budget=Budget::Where('user_id',$id)->where('etat',1)->get();
-        $maxDate=Budget::where('etat',1)->where('user_id',$id)->max('dateDeb');
-        $minDate=Budget::where('etat',1)->where('user_id',$id)->min('dateDeb');
-        $title=str::upper('saisie revenu de '.$minDate.' au '.$maxDate);
-        $titre='My wallet';
-        return view('Revenus.create',['titre'=>$title,'budgets'=>$budget,'revenus'=>$revenu,'title'=>$titre]);
+
+
+        $budget=Budget::Where('user_id',Auth::id())->where('etat',1)->get();
+
+        $title=str::upper('saisie revenu');
+        $titre='Ma saisie du jour';
+        return view('Revenus.create',['titre'=>$title,'title'=>$titre,'budgets'=>$budget]);
     }
 
     /**
@@ -90,7 +89,7 @@ class RevenuController extends Controller
                 'user_id' => $request->user,
                 'etat' => 1,
             ]);
-            $this->chargeDroit();
+            // $this->chargeDroit();
             return response()->json(['success'=>'La sauvegarde a été effectué avec succès.',
         'data'=>$request->montant_revenu]);
         }else return response()->json([['error'=>'Impossible de stocker.'],'data'=>[$request]]);
@@ -100,9 +99,13 @@ class RevenuController extends Controller
     }
 
     public function chargeDroit(){
-        $revenu=Revenu::where('etat',1)->where('user_id',Auth::id())->orderBy('id','desc')->take(4)->get();
+        $a = apache_request_headers();
+        $user = $a["user"];
+        $revenu=Revenu::where('etat',1)->where('user_id',$user)->latest()->first();
+        $budget= Budget::find($revenu->budget_id);
         $title='une chose';
-        return view('Revenus.wallet',['revenus'=>$revenu,'title'=>$title]);
+        return response()->json([['budget'=>$budget->libelle],'revenu'=>[$revenu]]);
+
 
     }
 

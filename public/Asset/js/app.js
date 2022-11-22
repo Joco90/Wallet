@@ -172,5 +172,27 @@ function storeServeur(){
         },
 
         );
+        updateTableLeft(user_id);
 }
 //Fin de script d'ajout de revenu
+
+function updateTableLeft(user_id){
+    $.ajax({
+        url:"/extrait-revenu",
+        type: "GET",
+        headers:{
+            user:user_id,
+        },
+        success:  function(response){
+
+            let createH4=document.createElement('h4');
+            createH4.classList.add('d-flex','justify-content-between','align-items-center','mb-3');
+            document.querySelector('.zonedroite').appendChild(createH4);
+            // createH4.innerHTML=' <span class="text-primary">'+'Mon Portefeuille'+'</span>'
+            console.log(response);
+        },
+        error : function (err) {
+            console.log(err)
+        }
+    });
+}
