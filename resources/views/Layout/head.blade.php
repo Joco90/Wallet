@@ -3,11 +3,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Wallet</title>
-  
+
     <link href="{{asset('Asset/css/bootstrap.min.css')}}" rel="stylesheet">
      <!-- Custom styles for this template -->
      <link href="{{asset('Asset/css/dashboard.css')}}" rel="stylesheet">
      <link href="{{asset('Asset/css/font-all.css')}}" rel="stylesheet">
+     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 
     <style>
         .bd-placeholder-img {
