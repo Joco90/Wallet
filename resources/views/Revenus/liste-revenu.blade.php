@@ -40,10 +40,10 @@
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">{{$mtD}}<small class="text-muted fw-light">/{{$mtR}}</small></h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
+                        <li>Revenus:</li>
+                        <li>Dépenses:</li>
+                        <li>Prevision</li>
+                        <li>Plus de Détails</li>
                         </ul>
                         <a href="{{'/ajouter-depenses/'.$budget->id}}" class="w-100 btn btn-lg btn-outline-primary">Saisie de dépenses</a>
                     </div>

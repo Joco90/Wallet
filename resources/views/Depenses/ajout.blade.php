@@ -1,7 +1,7 @@
 @extends('Layout.App')
 
 @section('content')
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" id="budgetAdd">
     <h1 class="h2">{{$titre}}</h1>
 </div>
 @include('layout.partials.alert')
@@ -13,18 +13,18 @@
         </h4>
         <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$12</span>
+                <div>
+                    <h6 class="my-0">Product name</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$12</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-                <h6 class="my-0">Second product</h6>
-                <small class="text-muted">Brief description</small>
-            </div>
-            <span class="text-muted">$8</span>
+                <div>
+                    <h6 class="my-0">Second product</h6>
+                    <small class="text-muted">Brief description</small>
+                </div>
+                <span class="text-muted">$8</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-sm">
             <div>

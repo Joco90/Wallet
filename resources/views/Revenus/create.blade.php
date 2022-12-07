@@ -31,7 +31,7 @@
 
                 </div>
             </div>
-            <div class="row g-3 m-2">
+            <div class="row g-3">
                 <div class="col-sm-6" id="blocklibelle">
                     <label for="description" class="form-label">Description</label>
                     <input type="text" class="form-control" name="libelle" id="description">
@@ -40,9 +40,11 @@
                     <label for="montant" class="form-label">Montant</label>
                     <input type="number" class="form-control" id="montant" name="montant">
                 </div>
+
                 <div class="col-sm-2">
                     <input type="hidden" class="form-control" name="user_id" value="{{Auth::id()}}" id="user_id">
                 </div>
+                <small class="text-muted"></small>
             </div>
 
 
